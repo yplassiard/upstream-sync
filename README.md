@@ -56,7 +56,7 @@ The aim is to simulate real-world scenarios and provide a foundation for insight
 - **Models**
 
   - **Entities**: Represent business model entities like Email, Message, Thread, and User.
-  - **ValueObjects**: Objects that have no identity of their own and are immutable. (More details can be added here if needed)
+  - **ValueObjects**: Objects that have no identity of their own and are immutable.
 
 - **Services**
   - **EmailFetcherService**: Responsible for fetching emails from a fictional API.
