@@ -9,7 +9,7 @@ Upstream Sync is designed to exploit an email retrieval API. Its main function i
 - Matching email addresses with user accounts.
 - Automatically creating messages and threads based on the emails.
 
-The aim is not only to simulate real-world scenarios but also to provide a comprehensive setup for assessing a candidate's coding and problem-solving skills.
+The aim is to simulate real-world scenarios and provide a foundation for insightful technical discussions, fostering a deeper understanding of the codebase and its challenges.
 
 ## Getting Started
 
@@ -67,8 +67,4 @@ We encourage you to delve into these folders and files to get a deeper understan
 
 ## Feedback
 
-Your insights and feedback on the project and the evaluation process are invaluable. Please share your thoughts after the session.
-
----
-
-_This project is meant for evaluation purposes only and is not intended for any commercial use._
+Your insights and feedback on the project and the process are invaluable. Please share your thoughts after the session.
