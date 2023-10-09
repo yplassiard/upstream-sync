@@ -1,6 +1,7 @@
 import { AbstractRepository } from "./AbstractRepository";
 import { MessageRow } from "../schema/MessageRow";
 import { MessageEntity } from "../../model/entities/MessageEntity";
+import { Contact } from "../../model/value-objects/Contact";
 
 export class MessageRepository extends AbstractRepository<MessageRow, MessageEntity> {
   protected loadEntity(row: MessageRow): MessageEntity {
@@ -24,6 +25,21 @@ export class MessageRepository extends AbstractRepository<MessageRow, MessageEnt
     }
 
     await stmt.finalize();
+  }
+
+  public async findOneByEmailUniversalMessageIdentifier(universalMessageId: Contact): Promise<MessageEntity | null> {
+    const row = await this.database.get<MessageRow>(
+      "SELECT * FROM messages m JOIN emails e ON m.email_id = e.id WHERE e.universal_message_id = @universal_message_id",
+      {
+        "@universal_message_id": universalMessageId.toString(),
+      }
+    );
+
+    if (!row) {
+      return null;
+    }
+
+    return this.loadEntity(row);
   }
 
   public async findAll(): Promise<MessageEntity[]> {
