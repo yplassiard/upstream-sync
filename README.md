@@ -80,7 +80,7 @@ Theorically, you should compare the `inReplyTo` property with the `universalMess
 
 Concretely, when running `yarn start`, the console should display messages grouped by threads, whereas currently they are all grouped into the same default thread.
 
-Hint: Reply emails appear chronologically after the email to which they are responding. You may avoid complexity by taking this into account.
+**Hint: The email API does not return items in a specific order. However, it may be necessary to process emails chronologically.**
 
 ### Task 2: Take messages stored in database into account
 
