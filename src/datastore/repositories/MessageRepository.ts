@@ -3,10 +3,21 @@ import { MessageRow } from "../schema/MessageRow";
 import { MessageEntity } from "../../model/entities/MessageEntity";
 import { Contact } from "../../model/value-objects/Contact";
 
-export class MessageRepository extends AbstractRepository<MessageRow, MessageEntity> {
+export class MessageRepository extends AbstractRepository<
+  MessageRow,
+  MessageEntity
+> {
   protected loadEntity(row: MessageRow): MessageEntity {
-    return new MessageEntity(row.sender_id, row.thread_id, row.id, row.body, new Date(row.date));
+    return new MessageEntity(
+      row.sender_id,
+      row.thread_id,
+      row.email_id,
+      row.body,
+      new Date(row.date),
+      row.id
+    );
   }
+
   public async persist(messages: MessageEntity[]): Promise<void> {
     const stmt = await this.database.prepare(
       "INSERT INTO messages (sender_id, thread_id, email_id, body, date) VALUES (@sender_id, @thread_id, @email_id, @body, @date)"
@@ -27,7 +38,9 @@ export class MessageRepository extends AbstractRepository<MessageRow, MessageEnt
     await stmt.finalize();
   }
 
-  public async findOneByEmailUniversalMessageIdentifier(universalMessageId: Contact): Promise<MessageEntity | null> {
+  public async findOneByEmailUniversalMessageIdentifier(
+    universalMessageId: Contact
+  ): Promise<MessageEntity | null> {
     const row = await this.database.get<MessageRow>(
       "SELECT * FROM messages m JOIN emails e ON m.email_id = e.id WHERE e.universal_message_id = @universal_message_id",
       {
@@ -43,7 +56,9 @@ export class MessageRepository extends AbstractRepository<MessageRow, MessageEnt
   }
 
   public async findAll(): Promise<MessageEntity[]> {
-    const rows = await this.database.all<MessageRow[]>("SELECT * FROM messages");
+    const rows = await this.database.all<MessageRow[]>(
+      "SELECT * FROM messages"
+    );
     return this.loadEntities(rows);
   }
 }
