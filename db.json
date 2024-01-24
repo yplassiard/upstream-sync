@@ -23,17 +23,6 @@
       "date": "2023-10-06T11:00:00Z"
     },
     {
-      "id": "38b2a927d7f36847",
-      "universal_message_id": "<def56g78@biogenlabs.com>",
-      "in_reply_to": null,
-      "from": "Dr. Albert <albert@biogenlabs.com>",
-      "to": "Dr. Marie <marie@biogenlabs.com>",
-      "cc": "Lab Team <labteam@biogenlabs.com>",
-      "body": "<html><body><p>Marie,</p><p>We need to analyze the recent findings. Thoughts?</p><p>Best,<br>Albert</p></body></html>",
-      "subject": "Recent Research Findings",
-      "date": "2023-10-06T12:00:00Z"
-    },
-    {
       "id": "48b3a938e8g47958",
       "universal_message_id": "<ghi78i90@biogenlabs.com>",
       "in_reply_to": "<def56g78@biogenlabs.com>",
@@ -42,7 +31,18 @@
       "cc": "",
       "body": "<html><body><p>Albert,</p><p>I've looked into the data. Let's meet today after lunch.</p><p>Regards,<br>Marie</p></body></html>",
       "subject": "Re: Recent Research Findings",
-      "date": "2023-10-06T13:00:00Z"
+      "date": "2023-10-05T15:00:00Z"
+    },
+    {
+      "id": "38b2a927d7f36847",
+      "universal_message_id": "<def56g78@biogenlabs.com>",
+      "in_reply_to": null,
+      "from": "Dr. Albert <albert@biogenlabs.com>",
+      "to": "Dr. Marie <marie@biogenlabs.com>",
+      "cc": "Lab Team <labteam@biogenlabs.com>",
+      "body": "<html><body><p>Marie,</p><p>We need to analyze the recent findings. Thoughts?</p><p>Best,<br>Albert</p></body></html>",
+      "subject": "Recent Research Findings",
+      "date": "2023-10-05T12:00:00Z"
     },
     {
       "id": "b9d9e9fk4o038215",
@@ -53,7 +53,7 @@
       "cc": "Sales Team <sales@autodrive.motors>",
       "body": "<html><body><p>Lucas,</p><p>Great! I've booked the conference room for our presentation.</p><p>Best,<br>Sophie</p></body></html>",
       "subject": "Re: New Car Model Presentation",
-      "date": "2023-10-06T17:00:00Z"
+      "date": "2023-10-04T01:00:00Z"
     },
     {
       "id": "68b5a95ag0k69270",
@@ -64,7 +64,7 @@
       "cc": "",
       "body": "<html><body><p>Benjamin,</p><p>We need to organize the upcoming environmental summit. Do you have the list of participants?</p><p>Warm regards,<br>Ella</p></body></html>",
       "subject": "Upcoming Environmental Summit",
-      "date": "2023-10-06T15:00:00Z"
+      "date": "2023-10-04T15:00:00Z"
     },
     {
       "id": "78b6a96bh1l70381",
@@ -75,7 +75,7 @@
       "cc": "Dev Team <dev@starnet.tech>, Labs <labs@starnet.tech>",
       "body": "<html><body><p>Ava,</p><p>The software release is delayed. We need to address some critical issues.</p><p>Best,<br>Chris</p></body></html>",
       "subject": "Software Release Update",
-      "date": "2023-10-06T16:00:00Z"
+      "date": "2023-10-02T16:00:00Z"
     },
     {
       "id": "98b7a97ci2m81592",
@@ -97,7 +97,7 @@
       "cc": "",
       "body": "<html><body><p>All,</p><p>We've compiled the results and will bring them to the meeting.</p><p>Best,<br>Team</p></body></html>",
       "subject": "Re: Recent Research Findings",
-      "date": "2023-10-06T16:30:00Z"
+      "date": "2023-10-07T16:30:00Z"
     },
     {
       "id": "c9f9g9hl5p149326",
@@ -130,7 +130,7 @@
       "cc": "",
       "body": "<html><body><p>Lucas & Sophie,</p><p>We're excited to see the new model. Let's make this presentation a success!</p><p>Regards,<br>Sales Team</p></body></html>",
       "subject": "Re: New Car Model Presentation",
-      "date": "2023-10-06T20:00:00Z"
+      "date": "2023-10-04T20:00:00Z"
     },
     {
       "id": "18b0a905c5d14625",
@@ -141,7 +141,7 @@
       "cc": "Rachel Green <rachel.green@techsolutions.inc>",
       "body": "<html><body><p>Amy,</p><p>Can we meet to discuss the new software update?</p><p>Regards,<br>James</p></body></html>",
       "subject": "Software Update Discussion",
-      "date": "2023-10-06T10:00:00Z"
+      "date": "2023-10-01T10:00:00Z"
     },
     {
       "id": "58b4a949f9j58169",
@@ -152,7 +152,7 @@
       "cc": "Sales Team <sales@autodrive.motors>",
       "body": "<html><body><p>Sophie,</p><p>The new car model is ready for presentation. Can we schedule a meeting?</p><p>Thanks,<br>Lucas</p></body></html>",
       "subject": "New Car Model Presentation",
-      "date": "2023-10-06T14:00:00Z"
+      "date": "2023-10-03T14:00:00Z"
     }
   ]
 }
