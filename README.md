@@ -70,6 +70,14 @@ We encourage you to delve into these folders and files to get a deeper understan
 
 ## Assignment
 
+### Preamble
+
+In this assignment, we will assess the following key criteria:
+
+- Code readability
+- Simplicity and effectiveness of implementations
+- For text responses that do not involve code changes: clarity and structural organization of the explanations
+
 ### Task 1: Group messages by threads
 
 As you may have noticed, the `import` method of the `EmailImportService` creates a default thread and assigns all messages to it. This is not the expected behavior. The goal is to group messages by threads. There are two headers that are part of the email protocol that can be used to do this: `In-Reply-To` and `Message-Id`. Each email has a unique `Message-Id` header and an optional `In-Reply-To` header that contains the `Message-Id` of the email it is replying to. In a threaded conversation, these headers form a chain of references. Specifically, the `In-Reply-To` header in each subsequent email points to the `Message-Id` of the email it's replying to, naturally grouping them into a thread. This chaining mechanism is what allows emails to be organized into coherent threads.
@@ -82,17 +90,30 @@ Concretely, when running `yarn start`, the console should display messages group
 
 **Hint: The email API does not return items in a specific order. However, it may be necessary to process emails chronologically.**
 
+**Note**: The RFC 5322 [defines](https://datatracker.ietf.org/doc/html/rfc5322#section-3.6.4) the structure of `Message-Id` as being akin to an email address format, which explains why message IDs are imported as a `Contact` instance.
+
 ### Task 2: Take messages stored in database into account
 
-Explain what would be needed, step by step, to take messages stored in the database into account when grouping messages by threads. You can write your answer in the `README.md` file. What parts of the code would you need to modify?
+In the first task, you organized messages into threads by matching the `In-Reply-To` field with the `Message-Id` field, but this was limited to emails freshly fetched and loaded into memory. However, consider the scenario where emails matching the `In-Reply-To` value are not present in the `fetchedEmails` array but have instead been stored in the database from a previous run of the `EmailImportService`.
 
-### Task 3: Remove HTML tags from messages
+#### Questions
 
-When creating the messages, remove the HTML tags from the message body. Figure out the best place to add this logic and implement it.
+1. To include messages already stored in the database, which existing repository method should be leveraged?
+2. Describe how you would use this method to achieve the intended outcome. Implementation details are not required, just a clear explanation of your approach.
 
-### Task 4: Add a unit test
+### Task 3: Display the domain name of the sender
 
-Add a unit test, explain why you chose to test this particular part of the code and more generally what would be the best way to test this project.
+In the `MessageDisplayService`, how would you display the domain name of the sender's email address for each email? Think about the best way to **_encapsulate_** the logic for extracting the domain name and **where** it should be placed in the codebase.
+
+### Task 4: Preventing Duplicate Imports in Parallel Email Processing
+
+Consider a scenario where emails of different users are imported daily through parallel execution processes. When multiple users interact with the service, it's possible for the service to import emails having the same `Message-Id` (for example, when user A sends an email to users B and C, both B and C will have emails in their inboxes with the same `Message-Id`).
+
+Given that import processes are executed in parallel, there's a risk that emails corresponding to a specific `Message-Id` might be imported multiple times. Explain how you would ensure that only a single instance of an email is imported for each unique `Message-Id`? Your response may involve infrastructure or architectural changes if needed, but this is not required. Do not implement the solution, just describe the approach you would take.
+
+### Task 5: Testing
+
+What do you believe is the most effective strategy for testing this project? What is your philosophy regarding testing?
 
 ## Feedback
 
