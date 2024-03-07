@@ -38,4 +38,16 @@ export class ThreadRepository extends AbstractRepository<ThreadRow, ThreadEntity
 
     return this.loadEntity(row);
   }
+
+  public async findByName(name: string): Promise<ThreadEntity | null> {
+    const row = await this.database.get<ThreadRow>("SELECT * FROM threads WHERE name = @name", {
+      "@name": name,
+    });
+
+    if (!row) {
+      return null;
+    }
+
+    return this.loadEntity(row);
+  }
 }
